@@ -1,6 +1,6 @@
 # Guardrail System
 
-A high-performance Spring Boot microservice implementing Redis-based concurrency guardrails, real-time virality tracking, notification throttling, and distributed cooldown protection.
+A Spring Boot microservice implementing Redis-based concurrency guardrails, virality tracking, notification throttling, and distributed cooldown protection.
 
 This project demonstrates backend engineering fundamentals including atomic Redis operations, stateless architecture, distributed rate limiting, scheduled background processing, and PostgreSQL persistence.
 
@@ -214,7 +214,7 @@ GET /api/posts/{postId}/virality
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/guardrail-system.git
+git clone https://github.com/Abhishekmt16/guardrail-system.git
 ```
 
 ---
@@ -294,7 +294,21 @@ Containers:
 * Redis 7
 
 ---
+# Tested Scenarios
 
+The system was tested for:
+
+* Concurrent bot spam protection
+* Redis atomic counter consistency
+* Notification batching
+* Cooldown enforcement
+* Maximum nested reply depth
+* Virality score calculation
+* Race-condition prevention
+
+The horizontal concurrency cap successfully prevented database writes beyond the configured bot reply threshold.
+
+---
 # Future Improvements
 
 * JWT Authentication
